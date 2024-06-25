@@ -9,30 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ImmatController {
-
-	/* @Autowired
-	//ImmatService immatService;
-	private ImmatService immatService;
 	
-	@GetMapping("/aeronef/{immat}")
-	public AeronefDTO getAeronef(@PathVariable("immat") String immat, HttpServletResponse response) {
-		var result = immatService.getAeronefFromImmat(immat);
-		
-		if (result.isEmpty()) {
-			response.setStatus(SC_NO_CONTENT);
-			return null;
-		}
-		
-		return result.get();
-	}
-
-	@GetMapping("/aeronefs") 
-	//http://localhost:8080/aeronefs?matricule=some_value
-	public List<AeronefDTO> getAeronefsByMatriculegetAeronef(@RequestParam String matricule) {
-		
-	private final ImmatService immatService;
-
-    /* @Autowired */
 	public ImmatController(ImmatService immatService) {
         this.immatService = immatService;
     }
