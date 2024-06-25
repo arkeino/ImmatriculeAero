@@ -1,16 +1,11 @@
 package estiam.projets.immataeronef;
 
-//import static jakarta.servlet.http.HttpServletResponse.SC_NO_CONTENT;
-
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-//import jakarta.servlet.http.HttpServletResponse;
-//import lombok.var;
 
 @RestController
 public class ImmatController {
@@ -35,16 +30,6 @@ public class ImmatController {
 	//http://localhost:8080/aeronefs?matricule=some_value
 	public List<AeronefDTO> getAeronefsByMatriculegetAeronef(@RequestParam String matricule) {
 		
-		/*return immatService.findAeronefsByMatricule(matricule); */
-		
-		/*List<AeronefDTO> aeronefs = immatService.findAeronefsByMatricule(matricule);
-        System.out.println("Retourne " + aeronefs.size() + " aeronef(s) avec matricule: " + matricule);
-		//return aeronefs;
-
-		var resultAeronefs = immatService.findAeronefsByMatricule(matricule);
-		return resultAeronefs;
-        
-    } */
 	private final ImmatService immatService;
 
     /* @Autowired */
