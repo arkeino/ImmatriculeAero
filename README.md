@@ -30,3 +30,29 @@ mvn spring-boot:run
 Accéder a l'application en localhost par exemple :
 
 http://localhost:8080/aeronefs/{immatriculation}
+
+
+
+
+Premier Pas sur Windows :
+
+Téléchargez le JDK depuis le site officiel d'Oracle : Télécharger le JDK
+Installez le JDK en suivant les instructions.
+
+Utiliser la commande pour vérifier l'installation : 
+
+java -version
+
+
+Installer Maven :
+
+Téléchargez Apache Maven depuis le site officiel : Télécharger Maven
+Extrayez l'archive téléchargée à un emplacement de votre choix.
+
+Compiler et exécuter le programme utiliser le scommande suivante :
+
+# Nettoyer et compiler le projet
+mvn clean install
+
+# Exécuter l'application Spring Boot
+mvn spring-boot:run
