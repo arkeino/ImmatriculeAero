@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aéronefs</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script>
+        async function fetchAeronefs() {
+            const matricule = document.getElementById('matricule').value;
+            if (matricule.trim() === '') {
+                alert('Veuillez entrer un matricule.');
+                return;
+            }
+            const response = await fetch(`/aeronefs?matricule=${matricule}`);
+            const aeronefs = await response.json();
+            let output = '<ul>';
+            aeronefs.forEach(aeronef => {
+                output += `<li><strong>Matricule:</strong> ${aeronef.matricule} - <strong>Modèle:</strong> ${aeronef.modele} - <strong>Compagnie:</strong> ${aeronef.compagnie}</li>`;
+            });
+            output += '</ul>';
+            document.getElementById('results').innerHTML = output;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rechercher des Aéronefs</h1>
+        <div class="search-container">
+            <input type="text" id="matricule" placeholder="Entrez le matricule">
+            <button onclick="fetchAeronefs()">Rechercher</button>
+        </div>
+        <div id="results"></div>
+    </div>
+</body>
+
+</html>
